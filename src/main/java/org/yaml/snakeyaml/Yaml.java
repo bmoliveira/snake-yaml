@@ -54,20 +54,20 @@ public class Yaml {
     protected BaseConstructor constructor;
     protected Representer representer;
     protected DumperOptions dumperOptions;
-    protected LoaderOptions loaderOptions;
 
     /**
      * Create Yaml instance. It is safe to create a few instances and use them
      * in different Threads.
      */
     public Yaml() {
-        this(new Constructor(), new LoaderOptions(), new Representer(), new DumperOptions(),
-                new Resolver());
+        this(new Constructor(), new Representer(), new DumperOptions(), new Resolver());
     }
 
+    /**
+     * @deprecated
+     */
     public Yaml(LoaderOptions loaderOptions) {
-        this(new Constructor(), loaderOptions, new Representer(), new DumperOptions(),
-                new Resolver());
+        this(new Constructor(), new Representer(), new DumperOptions(), new Resolver());
     }
 
     /**
@@ -158,33 +158,12 @@ public class Yaml {
      */
     public Yaml(BaseConstructor constructor, Representer representer, DumperOptions dumperOptions,
             Resolver resolver) {
-        this(constructor, new LoaderOptions(), representer, dumperOptions, resolver);
-    }
-
-    /**
-     * Create Yaml instance. It is safe to create a few instances and use them
-     * in different Threads.
-     * 
-     * @param constructor
-     *            BaseConstructor to construct incoming documents
-     * @param loaderOptions
-     *            LoaderOptions to control construction process
-     * @param representer
-     *            Representer to emit outgoing objects
-     * @param dumperOptions
-     *            DumperOptions to configure outgoing objects
-     * @param resolver
-     *            Resolver to detect implicit type
-     */
-    public Yaml(BaseConstructor constructor, LoaderOptions loaderOptions, Representer representer,
-            DumperOptions dumperOptions, Resolver resolver) {
         if (!constructor.isExplicitPropertyUtils()) {
             constructor.setPropertyUtils(representer.getPropertyUtils());
         } else if (!representer.isExplicitPropertyUtils()) {
             representer.setPropertyUtils(constructor.getPropertyUtils());
         }
         this.constructor = constructor;
-        this.loaderOptions = loaderOptions;
         representer.setDefaultFlowStyle(dumperOptions.getDefaultFlowStyle());
         representer.setDefaultScalarStyle(dumperOptions.getDefaultScalarStyle());
         representer.getPropertyUtils().setAllowReadOnlyProperties(
@@ -194,6 +173,27 @@ public class Yaml {
         this.dumperOptions = dumperOptions;
         this.resolver = resolver;
         this.name = "Yaml:" + System.identityHashCode(this);
+    }
+
+    /**
+     * Create Yaml instance. It is safe to create a few instances and use them
+     * in different Threads.
+     * 
+     * @param constructor
+     *            BaseConstructor to construct incoming documents
+     * @param loaderOptions
+     *            LoaderOptions to control construction process (unused)
+     * @param representer
+     *            Representer to emit outgoing objects
+     * @param dumperOptions
+     *            DumperOptions to configure outgoing objects
+     * @param resolver
+     *            Resolver to detect implicit type
+     * @deprecated
+     */
+    public Yaml(BaseConstructor constructor, LoaderOptions loaderOptions, Representer representer,
+            DumperOptions dumperOptions, Resolver resolver) {
+        this(constructor, representer, dumperOptions, resolver);
     }
 
     /**
@@ -375,7 +375,7 @@ public class Yaml {
         return emitter.getEvents();
     }
 
-    private class SilentEmitter implements Emitable {
+    private static class SilentEmitter implements Emitable {
         private List<Event> events = new ArrayList<Event>(100);
 
         public List<Event> getEvents() {
@@ -508,7 +508,7 @@ public class Yaml {
         return new YamlIterable(result);
     }
 
-    private class YamlIterable implements Iterable<Object> {
+    private static class YamlIterable implements Iterable<Object> {
         private Iterator<Object> iterator;
 
         public YamlIterable(Iterator<Object> iterator) {
@@ -518,7 +518,6 @@ public class Yaml {
         public Iterator<Object> iterator() {
             return iterator;
         }
-
     }
 
     /**
@@ -591,7 +590,7 @@ public class Yaml {
         return new NodeIterable(result);
     }
 
-    private class NodeIterable implements Iterable<Node> {
+    private static class NodeIterable implements Iterable<Node> {
         private Iterator<Node> iterator;
 
         public NodeIterable(Iterator<Node> iterator) {
@@ -689,7 +688,7 @@ public class Yaml {
         return new EventIterable(result);
     }
 
-    private class EventIterable implements Iterable<Event> {
+    private static class EventIterable implements Iterable<Event> {
         private Iterator<Event> iterator;
 
         public EventIterable(Iterator<Event> iterator) {
