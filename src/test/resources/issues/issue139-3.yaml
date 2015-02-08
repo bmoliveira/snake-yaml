@@ -1,0 +1,6 @@
+common: &id_common
+   key: 1
+
+production:
+   <<: *id_common
+   key: 2 # this value must stay
