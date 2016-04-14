@@ -487,12 +487,6 @@
             <activation>
               <activeByDefault>true</activeByDefault>
             </activation>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <properties>
                 <android.src>${project.build.directory}/android/src/</android.src>
                 <android.classes>${project.build.directory}/android/classes/</android.classes>
