@@ -132,18 +132,6 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-            <plugin>  <!-- Create sources.jar -->
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-source-plugin</artifactId>
-              <executions>
-                <execution>
-                  <id>attach-sources</id>
-                    <goals>
-                      <goal>jar</goal>
-                    </goals>
-                  </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -493,9 +481,6 @@
         </profile>
         <profile>
             <id>android</id>
-            <activation>
-              <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <android.src>${project.build.directory}/android/src/</android.src>
                 <android.classes>${project.build.directory}/android/classes/</android.classes>
