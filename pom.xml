@@ -64,6 +64,7 @@
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -103,13 +104,9 @@
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
     <build>
-        <testResources>
-            <testResource>
-                <directory>${basedir}/src/test/resources</directory>
-                <filtering>true</filtering>
-            </testResource>
-        </testResources>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -163,10 +160,6 @@
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
                 <configuration>
-                    <check>
-                        <totalBranchRate>80</totalBranchRate>
-                        <totalLineRate>95</totalLineRate>
-                    </check>
                     <formats>
                         <format>html</format>
                         <format>xml</format>
