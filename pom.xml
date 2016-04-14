@@ -4,6 +4,11 @@
     <artifactId>snakeyaml</artifactId>
     <version>1.18-SNAPSHOT</version>
     <packaging>bundle</packaging>
+    <settings>
+      <activeProfiles>
+          <activeProfile>android</activeProfile>
+      </activeProfiles>
+    </settings>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.scm.id>bitbucket</project.scm.id>
