@@ -2,13 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.yaml</groupId>
     <artifactId>snakeyaml</artifactId>
-    <version>1.18-SNAPSHOT</version>
+    <version>1.17.1</version>
     <packaging>bundle</packaging>
-    <settings>
-      <activeProfiles>
-          <activeProfile>android</activeProfile>
-      </activeProfiles>
-    </settings>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.scm.id>bitbucket</project.scm.id>
@@ -489,6 +484,12 @@
         </profile>
         <profile>
             <id>android</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
             <properties>
                 <android.src>${project.build.directory}/android/src/</android.src>
                 <android.classes>${project.build.directory}/android/classes/</android.classes>
