@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.yaml</groupId>
     <artifactId>snakeyaml</artifactId>
-    <version>1.17.1</version>
+    <version>1.17.android</version>
     <packaging>bundle</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -484,6 +484,9 @@
         </profile>
         <profile>
             <id>android</id>
+            <activation>
+              <activeByDefault>true</activeByDefault>
+            </activation>
             <activation>
                 <property>
                     <name>performRelease</name>
