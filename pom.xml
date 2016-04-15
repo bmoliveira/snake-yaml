@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.yaml</groupId>
     <artifactId>snakeyaml</artifactId>
-    <version>1.19</version>
+    <version>1.18.1</version>
     <packaging>bundle</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -64,7 +64,6 @@
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -104,9 +103,13 @@
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
-
     <build>
-
+        <testResources>
+            <testResource>
+                <directory>${basedir}/src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -481,6 +484,9 @@
         </profile>
         <profile>
             <id>android</id>
+            <activation>
+              <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <android.src>${project.build.directory}/android/src/</android.src>
                 <android.classes>${project.build.directory}/android/classes/</android.classes>

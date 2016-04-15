@@ -15,7 +15,6 @@
  */
 package org.yaml.snakeyaml.constructor;
 
-import java.beans.IntrospectionException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -57,7 +56,7 @@ public class Constructor extends SafeConstructor {
 
     /**
      * Create Constructor for the specified class as the root.
-     * 
+     *
      * @param theRoot
      *            - the class (usually JavaBean) to be constructed
      */
@@ -94,7 +93,7 @@ public class Constructor extends SafeConstructor {
     /**
      * Create Constructor for a class which does not have to be in the classpath
      * or for a definition from a Spring ApplicationContext.
-     * 
+     *
      * @param theRoot
      *            fully qualified class name of the root class (usually
      *            JavaBean)
@@ -118,7 +117,7 @@ public class Constructor extends SafeConstructor {
      * Make YAML aware how to parse a custom Class. If there is no root Class
      * assigned in constructor then the 'root' property of this definition is
      * respected.
-     * 
+     *
      * @param definition
      *            to be added to the Constructor
      * @return the previous value associated with <tt>definition</tt>, or
@@ -142,7 +141,7 @@ public class Constructor extends SafeConstructor {
         /**
          * Construct JavaBean. If type safe collections are used please look at
          * <code>TypeDescription</code>.
-         * 
+         *
          * @param node
          *            node where the keys are property names (they can only be
          *            <code>String</code>s) and values are objects to be created
@@ -318,8 +317,7 @@ public class Constructor extends SafeConstructor {
             return object;
         }
 
-        protected Property getProperty(Class<? extends Object> type, String name)
-                throws IntrospectionException {
+        protected Property getProperty(Class<? extends Object> type, String name) {
             return getPropertyUtils().getProperty(type, name);
         }
     }
