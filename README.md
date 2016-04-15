@@ -25,7 +25,7 @@ And the dependency
 
 ```
 dependencies {
-	        compile 'com.github.bmoliveira:faker:1.2.4-rc1'
+	        compile 'com.github.bmoliveira:faker:1.17.1-android'
 	}
 ```
 
