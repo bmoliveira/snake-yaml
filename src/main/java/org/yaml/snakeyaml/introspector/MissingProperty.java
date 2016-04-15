@@ -15,10 +15,10 @@
  */
 package org.yaml.snakeyaml.introspector;
 
-/**
- * A property that does not map to a real property; this is used when {@link
- * PropertyUtils.setSkipMissingProperties(boolean)} is set to true.
- */
+//
+//  A property that does not map to a real property; this is used when
+//  PropertyUtils.setSkipMissingProperties(boolean) is set to true.
+//
 public class MissingProperty extends Property {
 
     public MissingProperty(String name) {
@@ -30,9 +30,8 @@ public class MissingProperty extends Property {
         return new Class[0];
     }
 
-    /**
-     * Setter does nothing.
-     */
+
+    //Setter does nothing. 
     @Override
     public void set(Object object, Object value) throws Exception {
     }

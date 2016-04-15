@@ -48,8 +48,8 @@ public abstract class BaseConstructor {
             NodeId.class);
     /**
      * It maps the (explicit or implicit) tag to the Construct implementation.
-     * It is used: <br/>
-     * 1) explicit tag - if present. <br/>
+     * It is used: br/
+     * 1) explicit tag - if present. br/
      * 2) implicit tag - when the runtime class of the instance is unknown (the
      * node has the Object.class)
      */
@@ -85,7 +85,7 @@ public abstract class BaseConstructor {
 
     /**
      * Check if more documents available
-     * 
+     *
      * @return true when there are more YAML documents in the stream
      */
     public boolean checkData() {
@@ -95,7 +95,7 @@ public abstract class BaseConstructor {
 
     /**
      * Construct and return the next document
-     * 
+     *
      * @return constructed instance
      */
     public Object getData() {
@@ -108,13 +108,6 @@ public abstract class BaseConstructor {
         return constructDocument(node);
     }
 
-    /**
-     * Ensure that the stream contains a single document and construct it
-     * 
-     * @return constructed instance
-     * @throws ComposerException
-     *             in case there are more documents in the stream
-     */
     public Object getSingleData(Class<?> type) {
         // Ensure that the stream contains a single document and construct it
         Node node = composer.getSingleNode();
@@ -132,7 +125,7 @@ public abstract class BaseConstructor {
     /**
      * Construct complete YAML document. Call the second step in case of
      * recursive structures. At the end cleans all the state.
-     * 
+     *
      * @param node
      *            root Node
      * @return Java instance
@@ -164,7 +157,7 @@ public abstract class BaseConstructor {
     /**
      * Construct object from the specified Node. Return existing instance if the
      * node is already constructed.
-     * 
+     *
      * @param node
      *            Node to be constructed
      * @return Java instance
@@ -192,7 +185,7 @@ public abstract class BaseConstructor {
      * Get the constructor to construct the Node. For implicit tags if the
      * runtime class is known a dedicated Construct implementation is used.
      * Otherwise the constructor is chosen by the tag.
-     * 
+     *
      * @param node
      *            Node to be constructed
      * @return Construct implementation for the specified node

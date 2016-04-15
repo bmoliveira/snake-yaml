@@ -46,9 +46,8 @@ public abstract class Event {
         return endMark;
     }
 
-    /**
-     * @see "__repr__ for Event in PyYAML"
-     */
+
+     // @see "__repr__ for Event in PyYAML"
     protected String getArguments() {
         return "";
     }

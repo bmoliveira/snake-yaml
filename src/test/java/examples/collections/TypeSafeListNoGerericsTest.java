@@ -25,7 +25,7 @@ import org.yaml.snakeyaml.Util;
 import org.yaml.snakeyaml.Yaml;
 
 /**
- * Test ListBean->List developers <br/>
+ * Test ListBean->List developers <br>
  * Developer class cannot be properly recognised
  */
 public class TypeSafeListNoGerericsTest extends TestCase {

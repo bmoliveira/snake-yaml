@@ -98,6 +98,7 @@ public class Constructor extends SafeConstructor {
      *            fully qualified class name of the root class (usually
      *            JavaBean)
      * @throws ClassNotFoundException
+     *            If class not found
      */
     public Constructor(String theRoot) throws ClassNotFoundException {
         this(Class.forName(check(theRoot)));

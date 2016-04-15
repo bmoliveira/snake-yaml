@@ -108,23 +108,18 @@ public final class Mark {
         return name;
     }
 
-    /**
-     * starts with 0
-     */
+
+     // starts with 0
     public int getLine() {
         return line;
     }
 
-    /**
-     * starts with 0
-     */
+    // starts with 0
     public int getColumn() {
         return column;
     }
 
-    /**
-     * starts with 0
-     */
+    // starts with 0
     public int getIndex() {
         return index;
     }

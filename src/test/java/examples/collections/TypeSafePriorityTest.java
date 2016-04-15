@@ -25,7 +25,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
 /**
- * Test ListBean->List<Human> developers <br/>
+ * Test ListBean->List<Human> developers <br>
  * Human is an interface and the global tags are required
  */
 public class TypeSafePriorityTest extends TestCase {

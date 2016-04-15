@@ -25,7 +25,7 @@ import org.yaml.snakeyaml.Util;
 import org.yaml.snakeyaml.Yaml;
 
 /**
- * Test MapBean->Map<Enum, Developer> developers <br/>
+ * Test MapBean->Map<Enum, Developer> developers <br>
  * Developer class must be properly recognised
  */
 public class TypeSafeMap2Test extends TestCase {

@@ -24,7 +24,7 @@ import org.yaml.snakeyaml.Util;
 import org.yaml.snakeyaml.Yaml;
 
 /**
- * Test public field ListBean->List<Developer> developers <br/>
+ * Test public field ListBean->List<Developer> developers <br>
  * Developer class must be properly recognised
  */
 public class ListFileldBeanTest extends TestCase {

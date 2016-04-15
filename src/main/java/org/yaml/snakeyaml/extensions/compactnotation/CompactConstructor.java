@@ -208,12 +208,9 @@ public class CompactConstructor extends Constructor {
         }
     }
 
-    /**
-     * Provide the name of the property which is used when the entries form a
-     * sequence. The property must be a List.
-     *
-     * @throws IntrospectionException
-     */
+
+  // Provide the name of the property which is used when the entries form a
+  // sequence. The property must be a List.
     protected String getSequencePropertyName(Class<?> bean) {
         Set<Property> properties = getPropertyUtils().getProperties(bean);
         for (Iterator<Property> iterator = properties.iterator(); iterator.hasNext();) {

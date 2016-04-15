@@ -42,13 +42,6 @@ public class ScalarNode extends Node {
         this.resolved = resolved;
     }
 
-    /**
-     * Get scalar style of this node.
-     * 
-     * @see org.yaml.snakeyaml.events.ScalarEvent
-     * @see <a href="http://yaml.org/spec/1.1/#id903915">Chapter 9. Scalar
-     *      Styles</a>
-     */
     public Character getStyle() {
         return style;
     }
@@ -60,7 +53,7 @@ public class ScalarNode extends Node {
 
     /**
      * Value of this scalar.
-     * 
+     *
      * @return Scalar's value.
      */
     public String getValue() {

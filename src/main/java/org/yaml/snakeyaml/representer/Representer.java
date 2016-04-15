@@ -50,9 +50,9 @@ public class Representer extends SafeRepresenter {
     }
 
     /**
-     * Tag logic:<br/>
-     * - explicit root tag is set in serializer <br/>
-     * - if there is a predefined class tag it is used<br/>
+     * Tag logic:<br>
+     * - explicit root tag is set in serializer <br>
+     * - if there is a predefined class tag it is used<br>
      * - a global tag with class name is always used as tag. The JavaBean parent
      * of the specified JavaBean may set another tag (tag:yaml.org,2002:map)
      * when the property class is the same as runtime class
@@ -228,14 +228,6 @@ public class Representer extends SafeRepresenter {
         }
     }
 
-    /**
-     * Get JavaBean properties to be serialised. The order is respected. This
-     * method may be overridden to provide custom property selection or order.
-     *
-     * @param type
-     *            - JavaBean to inspect the properties
-     * @return properties to serialise
-     */
     protected Set<Property> getProperties(Class<? extends Object> type) {
         return getPropertyUtils().getProperties(type);
     }

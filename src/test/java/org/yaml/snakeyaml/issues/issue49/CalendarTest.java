@@ -47,7 +47,7 @@ public class CalendarTest extends TestCase {
 
     /**
      * Daylight Saving Time is in effect on this date/time in
-     * America/Los_Angeles Daylight<br/>
+     * America/Los_Angeles Daylight<br>
      * Saving Time is not in effect on this date/time in GMT
      */
     public void testDumpDstIsNotTheSame() {
@@ -57,7 +57,7 @@ public class CalendarTest extends TestCase {
 
     /**
      * Daylight Saving Time is not in effect on this date/time in
-     * America/Los_Angeles Daylight<br/>
+     * America/Los_Angeles Daylight<br>
      * Saving Time is not in effect on this date/time in GMT
      */
     public void testDumpDstIsTheSame() {

@@ -24,7 +24,7 @@ import org.yaml.snakeyaml.Util;
 import org.yaml.snakeyaml.Yaml;
 
 /**
- * Test ListBean->List<Human> developers <br/>
+ * Test ListBean->List<Human> developers <br>
  * Human is an interface and the global tags are required
  */
 public class TypeSafeListWithInterfaceTest extends TestCase {
