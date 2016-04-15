@@ -15,7 +15,6 @@
  */
 package org.yaml.snakeyaml.representer;
 
-import java.beans.IntrospectionException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -46,11 +45,7 @@ public class Representer extends SafeRepresenter {
 
     protected class RepresentJavaBean implements Represent {
         public Node representData(Object data) {
-            try {
-                return representJavaBean(getProperties(data.getClass()), data);
-            } catch (IntrospectionException e) {
-                throw new YAMLException(e);
-            }
+            return representJavaBean(getProperties(data.getClass()), data);
         }
     }
 
@@ -61,7 +56,7 @@ public class Representer extends SafeRepresenter {
      * - a global tag with class name is always used as tag. The JavaBean parent
      * of the specified JavaBean may set another tag (tag:yaml.org,2002:map)
      * when the property class is the same as runtime class
-     * 
+     *
      * @param properties
      *            JavaBean getters
      * @param javaBean
@@ -105,7 +100,7 @@ public class Representer extends SafeRepresenter {
 
     /**
      * Represent one JavaBean property.
-     * 
+     *
      * @param javaBean
      *            - the instance to be represented
      * @param property
@@ -153,7 +148,7 @@ public class Representer extends SafeRepresenter {
     /**
      * Remove redundant global tag for a type safe (generic) collection if it is
      * the same as defined by the JavaBean property
-     * 
+     *
      * @param property
      *            - JavaBean property
      * @param node
@@ -236,13 +231,12 @@ public class Representer extends SafeRepresenter {
     /**
      * Get JavaBean properties to be serialised. The order is respected. This
      * method may be overridden to provide custom property selection or order.
-     * 
+     *
      * @param type
      *            - JavaBean to inspect the properties
      * @return properties to serialise
      */
-    protected Set<Property> getProperties(Class<? extends Object> type)
-            throws IntrospectionException {
+    protected Set<Property> getProperties(Class<? extends Object> type) {
         return getPropertyUtils().getProperties(type);
     }
 }
