@@ -1,5 +1,35 @@
 ***The art of simplicity is a puzzle of complexity.***
 
+## Android jitpack version ##
+
+This version is a port from the original repository.
+
+Changes made:
+
+- Android maven deploy profile changes applied
+- Some removed some javadoc generator lines that were thowing javadoc generator errors (follow the original javadocs)
+
+With this version you can use snakeyaml directly from jitpack!
+
+Just add jitpack to repositories
+
+```
+allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+And the dependency
+
+```
+dependencies {
+	        compile 'com.github.bmoliveira:faker:1.2.4-rc1'
+	}
+```
+
+
 ## Overview ##
 [YAML](http://yaml.org) is a data serialization format designed for human readability and interaction with scripting languages.
 
