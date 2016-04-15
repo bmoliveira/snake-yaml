@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/bmoliveira/snake-yaml.svg)](https://jitpack.io/#bmoliveira/snake-yaml)
+
 ***The art of simplicity is a puzzle of complexity.***
 
 ## Android jitpack version ##
@@ -25,7 +27,7 @@ And the dependency
 
 ```
 dependencies {
-	        compile 'com.github.bmoliveira:faker:1.17.1-android'
+	        compile 'com.github.bmoliveira:snake-yaml:v1.18-android'
 	}
 ```
 
