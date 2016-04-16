@@ -15,20 +15,20 @@ With this version you can use snakeyaml directly from jitpack!
 
 Just add jitpack to repositories
 
-```
+```groovy
 allprojects {
-		repositories {
-			...
-			maven { url "https://jitpack.io" }
-		}
-	}
+	repositories {
+	...
+	maven { url "https://jitpack.io" }
+  }
+}
 ```
 And the dependency
 
-```
+```groovy
 dependencies {
-	        compile 'com.github.bmoliveira:snake-yaml:v1.18-android'
-	}
+	compile 'com.github.bmoliveira:snake-yaml:v1.18-android'
+}
 ```
 
 
